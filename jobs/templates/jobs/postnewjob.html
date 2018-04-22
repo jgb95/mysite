@@ -1,0 +1,24 @@
+{% extends 'jobs/layout.html' %}
+
+{% block content %}
+    <h3 class="container center-align green">Posting New Job</h3>
+    <div class="container">
+        <div class="row">
+            <form class="s12" action="index.html" method="post">
+                {% csrf_token %}
+                <div class="input-field col s12">
+                    {{ form.title }}
+                    <label for="id_title" class="active">Job Title</label>
+                </div>
+                <div class="input-field col s12">
+                    {{ form.job_description }}
+                    <label for="id_job_description" class="active">Job Description</label>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <a href="/jobs/" class="btn col s2">Go Back</a>
+            <input type="submit" value="Submit" class="btn col s3 offset-s7">
+        </div>
+    </div>
+{% endblock %}
