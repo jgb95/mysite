@@ -1,11 +1,10 @@
 {% extends 'jobs/layout.html' %}
 
 {% block content %}
-<h3 class="container center-align green">{{ title }}</h3>
+    <h3 class="container center-align green">{{ title }}</h3>
     <ul class="container collection">
-    {% for job in jobs %}
-{#        <li class="collection-item"><a href="/jobs/details/{{ job.id }}">{{ job }}</a></li>#}
-        <a href="/jobs/details/{{ job.id }}" class="collection-item"><li>{{ job }}</li></a>
-    {% endfor %}
+        {% for job in jobs %}
+            <a href="/jobs/details/{{ job.id }}" class="collection-item"><li>{{ job }}</li></a>
+        {% endfor %}
     </ul>
 {% endblock %}
