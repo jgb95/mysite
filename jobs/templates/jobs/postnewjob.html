@@ -1,10 +1,10 @@
 {% extends 'jobs/layout.html' %}
 
 {% block content %}
-    <h3 class="container center-align green">Posting New Job</h3>
     <div class="container">
+    <h3 class="center-align green">Posting New Job</h3>
         <div class="row">
-            <form class="s12" action="index.html" method="post">
+            <form class="s12" action="" method="post">
                 {% csrf_token %}
                 <div class="input-field col s12">
                     {{ form.title }}
@@ -14,11 +14,17 @@
                     {{ form.job_description }}
                     <label for="id_job_description" class="active">Job Description</label>
                 </div>
+                <div class="input-field col s12">
+                    {{ form.company }}
+                    <label for="id_company">Company</label>
+                </div>
+                <div class="row">
+                    <a href="/jobs/" class="btn col s2">Back</a>
+                    <button class="btn waves-effect waves-light col s3 offset-s7" type="submit" name="action">Submit
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
             </form>
-        </div>
-        <div class="row">
-            <a href="/jobs/" class="btn col s2">Go Back</a>
-            <input type="submit" value="Submit" class="btn col s3 offset-s7">
         </div>
     </div>
 {% endblock %}

@@ -1,15 +1,17 @@
 {% extends 'jobs/layout.html' %}
 
 {% block content %}
-    <h3 class="container center-align green">Job Details</h3>
     <div class="container">
+    <h3 class="center-align green">Job Details</h3>
         <div class="card blue-grey lighten-3">
             <div class="card-content">
-                <span class="card-title">{{ job }}</span>
+                <span class="card-title">{{ job }} - {{ job.company.industry }}</span>
                 <p>{{ job.job_description }}</p>
             </div>
             <div class="card-action">Posted: {{ job.date_posted }}</div>
         </div>
-        <a href="/jobs/" class="btn">Go Back</a>
+        <div class="row">
+            <a href="/jobs/" class="btn col s2">Back</a>
+        </div>
     </div>
 {% endblock %}

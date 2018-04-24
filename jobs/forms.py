@@ -1,6 +1,7 @@
 from django import forms
 from jobs import models
 
+
 class PostNewJobForm(forms.ModelForm):
     class Meta:
         model = models.Job
@@ -19,4 +20,3 @@ class PostNewJobForm(forms.ModelForm):
             'placeholder': 'A brief description of the duties of the job',
             'class': 'materialize-textarea'
         })
-
