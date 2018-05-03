@@ -7,16 +7,16 @@
             <form class="s12" action="" method="post">
                 {% csrf_token %}
                 <div class="input-field col s12">
+                    {{ form.company }}
+                    <label for="id_company">Company</label>
+                </div>
+                <div class="input-field col s12">
                     {{ form.title }}
                     <label for="id_title" class="active">Job Title</label>
                 </div>
                 <div class="input-field col s12">
                     {{ form.job_description }}
                     <label for="id_job_description" class="active">Job Description</label>
-                </div>
-                <div class="input-field col s12">
-                    {{ form.company }}
-                    <label for="id_company">Company</label>
                 </div>
                 <div class="row">
                     <a href="/jobs/" class="btn col s2">Back</a>
@@ -27,4 +27,13 @@
             </form>
         </div>
     </div>
+    <!--Import jQuery before materialize.js-->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<!-- Compiled and minified materialize JavaScript -->
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('select').material_select();
+		});
+	</script>
 {% endblock %}
