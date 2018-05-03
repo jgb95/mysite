@@ -1,2 +1,2 @@
 # mysite
-Django test website
+Basic Django job website for CIS-430 final project
